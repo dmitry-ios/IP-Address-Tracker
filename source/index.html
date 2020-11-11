@@ -8,30 +8,34 @@
   </head>
   <body class="page__body">
     <main class="page-main">
-      <section class="section">
-        <h1 class="section__title">IP Address Tracker</h1>
+      <section class="input-section">
+        <h1 class="input-section__title">IP Address Tracker</h1>
         <form class="search" action="https://geo.ipify.org/api/v1" method="GET">
-          <input class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
-          <input class="search__api-key" type="hidden" name="apiKey" value="YOUR_API_KEY">
-          <button class="search__button" type="submit">
-            <span class="visually-hidden">Search</span>
-          </button>
+          <div class="container">
+            <input class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
+            <input class="search__api-key" type="hidden" name="apiKey" value="YOUR_API_KEY">
+            <button class="search__button" type="submit">
+              <span class="visually-hidden">Search</span>
+            </button>
+          </div>
         </form>
       </section>
-      <section class="section">
+      <section class="info-section">
         <h2 class="visually-hidden">Information</h2>
-        <dl class="info-list">
-          <dt class="info-list__title">IP Address</dt>
-          <dd class="info-list__desc">192.212.174.101</dd>
-          <dt class="info-list__title">Location</dt>
-          <dd class="info-list__desc">Brooklyn, NY 10001</dd>
-          <dt class="info-list__title">Timezone</dt>
-          <dd class="info-list__desc">UTC -05:00</dd>
-          <dt class="info-list__title">ISP</dt>
-          <dd class="info-list__desc">SpaceX Starlink</dd>
-        </dl>
+        <div class="container">
+          <dl class="info-list">
+            <dt class="info-list__title">IP Address</dt>
+            <dd class="info-list__desc">192.212.174.101</dd>
+            <dt class="info-list__title">Location</dt>
+            <dd class="info-list__desc">Brooklyn, NY 10001</dd>
+            <dt class="info-list__title">Timezone</dt>
+            <dd class="info-list__desc">UTC -05:00</dd>
+            <dt class="info-list__title">ISP</dt>
+            <dd class="info-list__desc">SpaceX Starlink</dd>
+          </dl>
+        </div>
       </section>
-      <section class="section">
+      <section class="map-section">
         <h2 class="visually-hidden">Map</h2>
         <div class="map">
           <!-- Здесь будет карта -->

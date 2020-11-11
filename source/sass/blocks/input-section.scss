@@ -1,0 +1,17 @@
+.input-section {
+  padding-top: 32px;
+  padding-bottom: 157px;
+
+  background-image: url("../img/pattern-bg.png");
+  background-color: $special-sky-blue;
+}
+
+.input-section__title {
+  margin: 0;
+
+  color: $basic-white;
+  text-align: center;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+}

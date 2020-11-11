@@ -1,0 +1,28 @@
+.info-list {
+  margin: 0;
+
+  color: $basic-black;
+  text-align: center;
+}
+
+.info-list__title {
+  margin-bottom: 15px;
+
+  color: $basic-grey;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.info-list__desc {
+  margin: 0;
+  margin-bottom: 30px;
+
+  color: $basic-dark-grey;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info-list__desc:last-child {
+  margin-bottom: 0;
+}
