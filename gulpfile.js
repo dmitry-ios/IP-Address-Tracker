@@ -23,6 +23,20 @@ const styles = () => {
 
 exports.styles = styles;
 
+// Libraries
+
+const jsLib = () => {
+  return gulp.src("node_modules/leaflet/dist/leaflet.js")
+    .pipe(gulp.dest("source/js"))
+    .pipe(sync.stream());
+}
+
+const cssLib = () => {
+  return gulp.src("node_modules/leaflet/dist/leaflet.css")
+    .pipe(gulp.dest("source/css"))
+    .pipe(sync.stream());
+}
+
 // Server
 
 const server = (done) => {
@@ -47,5 +61,5 @@ const watcher = () => {
 }
 
 exports.default = gulp.series(
-  styles, server, watcher
+  styles, cssLib, jsLib, server, watcher
 );

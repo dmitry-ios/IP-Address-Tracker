@@ -3,26 +3,31 @@
 
   color: $basic-black;
   text-align: center;
+
+  background-color: $basic-white;
 }
 
 .info-list__title {
-  margin-bottom: 15px;
+  margin-bottom: 6px;
 
   color: $basic-grey;
-  font-size: 8px;
+  font-size: 12px;
+  line-height: 12px;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .info-list__desc {
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 
   color: $basic-dark-grey;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 400;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.info-list__desc:last-child {
-  margin-bottom: 0;
-}
