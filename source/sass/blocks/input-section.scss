@@ -1,9 +1,12 @@
 .input-section {
 
-  padding-top: 32px;
+  padding-top: 29px;
   padding-bottom: 157px;
 
   background-image: url("../img/pattern-bg.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   background-color: $special-sky-blue;
 }
 

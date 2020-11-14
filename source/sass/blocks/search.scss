@@ -1,3 +1,30 @@
 .search {
-  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  margin-top: 31px;
+
+  background-color: $basic-white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.search__text {
+  padding: 0 24px;
+
+  font-size: 18px;
+
+  background-color: $basic-white;
+  border: 0;
+}
+
+.search__button {
+  width: 58px;
+  height: 58px;
+  margin-left: auto;
+
+  background-color: $basic-black;
+  background-image: url("../img/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 0;
 }

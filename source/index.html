@@ -1,63 +1,66 @@
 <!DOCTYPE html>
-<html class="page" lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Frontend Mentor | IP Address Tracker</title>
-    <link rel="stylesheet" href="css/leaflet.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>IP Address Tracker</title>
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="page__body">
+  <body>
+
     <main class="page-main">
-      <div class="page-main__top-wrapper">
+      <div class="page-main__top">
         <section class="input-section">
-          <h1 class="input-section__title">IP Address Tracker</h1>
-          <form class="search" action="https://geo.ipify.org/api/v1" method="GET">
-            <div class="container">
-              <input class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
-              <input class="search__api-key" type="hidden" name="apiKey" value="YOUR_API_KEY">
-              <button class="search__button" type="submit">
-                <span class="visually-hidden">Search</span>
-              </button>
-            </div>
-          </form>
-        </section>
-        <section class="info-section">
-          <h2 class="visually-hidden">Information</h2>
+          <h1 class="input-section__title">
+            IP Address Tracker
+          </h1>
           <div class="container">
-            <dl class="info-list">
-              <dt class="info-list__title">IP Address</dt>
-              <dd class="info-list__desc">192.212.174.101</dd>
-              <dt class="info-list__title">Location</dt>
-              <dd class="info-list__desc">Brooklyn, NY 10001</dd>
-              <dt class="info-list__title">Timezone</dt>
-              <dd class="info-list__desc">UTC -05:00</dd>
-              <dt class="info-list__title">ISP</dt>
-              <dd class="info-list__desc">SpaceX Starlink</dd>
-            </dl>
+            <form class="search" action="https://geo.ipify.org/api/v1" method="GET">
+              <input class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
+              <input class="search__key" type="hidden" name="apiKey" value="at_xFWrNmETIjKcTZgJe9zIzb9jcxBpj">
+              <button class="search__button" type="submit">
+                <span class="visually-hidden">
+                  Search
+                </span>
+              </button>
+            </form>
           </div>
         </section>
+
+        <section class="info-section">
+          <h2 class="visually-hidden">
+            Info results
+          </h2>
+          <dl class="info-list">
+            <dt class="info-list__title">IP Address</dt>
+            <dd class="info-list__description">192.212.174.101</dd>
+
+            <dt class="info-list__title">Location</dt>
+            <dd class="info-list__description">Brooklyn, NY 10001</dd>
+
+            <dt class="info-list__title">Timezone</dt>
+            <dd class="info-list__description">UTC -05:00</dd>
+
+            <dt class="info-list__title">ISP</dt>
+            <dd class="info-list__description">SpaceX Starlink</dd>
+          </dl>
+        </section>
       </div>
+
       <section class="map-section">
-        <h2 class="visually-hidden">Map</h2>
+        <h2 class="visually-hidden">
+          Map
+        </h2>
         <div id="mapid" class="map">
           <span class="visually-hidden">
-            Интерактивная карта, на которой отображается найденное место адреса или домена.
+            An interactive map that displays the found location of an address or domain.
           </span>
         </div>
       </section>
     </main>
-    <script src="js/leaflet.js"></script>
-    <script>
-      const leafletMap = L.map('mapid').setView([51.505, -0.09], 13);
 
-      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG1pdHJ5YiIsImEiOiJja2hld293cW8wYThxMnNwbDkxdWhwNjZlIn0.EI5vC4TroTo2dOQN-deCQQ', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-      }).addTo(leafletMap);
-    </script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
