@@ -1,5 +1,4 @@
 .input-section {
-
   padding-top: 29px;
   padding-bottom: 157px;
 
@@ -8,6 +7,10 @@
   background-position: center center;
   background-size: cover;
   background-color: $special-sky-blue;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 80px;
+  }
 }
 
 .input-section__title {

@@ -5,6 +5,12 @@
   text-align: center;
 
   background-color: $basic-white;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+
+    text-align: left;
+  }
 }
 
 .info-list__title {
@@ -19,15 +25,35 @@
 
 .info-list__description {
   margin: 0;
-  margin-bottom: 25px;
 
   color: $basic-dark-grey;
   font-size: 21px;
   line-height: 21px;
   font-weight: 400;
+}
+
+.info-list__item {
+  position: relative;
+
+  flex-grow: 1;
+  margin: 0 32px;
+  margin-bottom: 25px;
 
   &:last-child {
     margin-bottom: 0;
   }
-}
 
+  @media (min-width: $tablet-width) {
+    &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -32px;
+      top: 0;
+
+      width: 1px;
+      height: 75px;
+
+      background-color: $basic-light-grey;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-width: $mobile-width;
 
   color: $basic-white;
   font-family: $main-font;
@@ -9,7 +10,8 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 24px;
-  width: $container-width;
+  min-width: $min-container-width;
+  max-width: $max-container-width;
 }
 
 .visually-hidden:not(:focus):not(:active),
