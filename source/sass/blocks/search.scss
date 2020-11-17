@@ -27,4 +27,15 @@
   background-repeat: no-repeat;
   background-position: center center;
   border: 0;
+
+  &:hover,
+  &:focus {
+    background-color: $basic-extra-grey;
+
+    cursor: pointer;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }

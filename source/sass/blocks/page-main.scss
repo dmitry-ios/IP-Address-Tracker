@@ -1,3 +1,12 @@
+.page-main {
+  min-height: 100vh;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+  }
+}
+
 .page-main__top {
   position: relative;
 }

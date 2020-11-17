@@ -1,7 +1,12 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-width: $mobile-width;
+  min-height: 100%;
 
   color: $basic-white;
   font-family: $main-font;
