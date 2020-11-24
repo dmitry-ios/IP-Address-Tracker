@@ -1,13 +1,36 @@
-const leafletMap = L.map('mapid').setView([51.505, -0.09], 13)
+'use strict';
 
-L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG1pdHJ5YiIsImEiOiJja2hld293cW8wYThxMnNwbDkxdWhwNjZlIn0.EI5vC4TroTo2dOQN-deCQQ',
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-  },
-).addTo(leafletMap)
+const searchKeyInput = document.querySelector(`.search__key`);
+const searchTextInput = document.querySelector(`.search__text`);
+const submitButton = document.querySelector(`.search__button`);
+
+const setInformation = (api) => {
+  window.backend.request(api, function (res) {
+    window.render.renderInformation(res);
+    window.map.setupMarker(res);
+  }, function (err) {
+    window.render.renderErrorMessage(err);
+  });
+};
+
+const setUserInformation = () => {
+  const key = searchKeyInput.value;
+  const api = window.backend.getDefaultApi(key);
+
+  setInformation(api);
+};
+
+const setInputInformation = () => {
+  const key = searchKeyInput.value;
+  const text = searchTextInput.value;
+  const api = window.backend.getApi(key, text);
+
+  setInformation(api);
+}
+
+submitButton.addEventListener(`click`, (evt) => {
+  evt.preventDefault();
+  setInputInformation();
+});
+
+setUserInformation();

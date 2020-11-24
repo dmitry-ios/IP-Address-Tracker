@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IP Address Tracker</title>
-    <link rel="stylesheet" href="css/leaflet.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/leaflet.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
   </head>
   <body>
 
@@ -17,7 +17,8 @@
           </h1>
           <div class="container">
             <form class="search" action="https://geo.ipify.org/api/v1" method="GET">
-              <input class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
+              <label class="visually-hidden" for="ip-address-field">IP address or domain</label>
+              <input id="ip-address-field" class="search__text" type="text" name="ipAddress" placeholder="Search for any IP address or domain">
               <input class="search__key" type="hidden" name="apiKey" value="at_xFWrNmETIjKcTZgJe9zIzb9jcxBpj">
               <button class="search__button" type="submit">
                 <span class="visually-hidden">
@@ -35,22 +36,22 @@
           <dl class="info-list">
             <div class="info-list__item">
               <dt class="info-list__title">IP Address</dt>
-              <dd class="info-list__description">192.212.174.101</dd>
+              <dd class="info-list__description info-list__description--ip">192.212.174.101</dd>
             </div>
 
             <div class="info-list__item">
               <dt class="info-list__title">Location</dt>
-              <dd class="info-list__description">Brooklyn, NY 10001</dd>
+              <dd class="info-list__description info-list__description--location">Brooklyn, NY 10001</dd>
             </div>
 
             <div class="info-list__item">
               <dt class="info-list__title">Timezone</dt>
-              <dd class="info-list__description">UTC -05:00</dd>
+              <dd class="info-list__description info-list__description--timezone">UTC -05:00</dd>
             </div>
 
             <div class="info-list__item">
               <dt class="info-list__title">ISP</dt>
-              <dd class="info-list__description">SpaceX Starlink</dd>
+              <dd class="info-list__description info-list__description--isp">SpaceX Starlink</dd>
             </div>
           </dl>
         </section>
@@ -68,7 +69,6 @@
       </section>
     </main>
 
-    <script src="js/leaflet.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/bundle.js"></script>
   </body>
 </html>

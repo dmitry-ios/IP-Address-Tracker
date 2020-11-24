@@ -12,6 +12,7 @@
   background-color: $basic-white;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 2px 10px $basic-transparet-grey;
 
   @media (min-width: $tablet-width) {
     top: 71%;

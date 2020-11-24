@@ -5,6 +5,23 @@ const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sync = require("browser-sync").create();
+const run = require("gulp-run");
+const del = require("del");
+const htmlmin = require("gulp-htmlmin");
+const csso = require("gulp-csso");
+const rename = require("gulp-rename");
+
+// Clean
+
+const clean = () => {
+  return del("dist");
+}
+
+// Webpack
+
+const webpack = () => {
+  return run("webpack --mode production").exec().pipe(sync.stream());
+};
 
 // Styles
 
@@ -16,8 +33,10 @@ const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
+    .pipe(csso())
+    .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(sync.stream());
 }
 
@@ -33,7 +52,9 @@ const jsLib = () => {
 
 const cssLib = () => {
   return gulp.src("node_modules/leaflet/dist/leaflet.css")
-    .pipe(gulp.dest("source/css"))
+    .pipe(csso())
+    .pipe(rename("leaflet.min.css"))
+    .pipe(gulp.dest("dist/css"))
     .pipe(sync.stream());
 }
 
@@ -42,7 +63,7 @@ const cssLib = () => {
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: 'source'
+      baseDir: "dist"
     },
     cors: true,
     notify: false,
@@ -53,6 +74,24 @@ const server = (done) => {
 
 exports.server = server;
 
+// Copy
+
+const copy = () => {
+  return gulp.src([
+    "source/fonts/**/*",
+    "source/img/**/*"
+  ], {
+    base: "source"
+  })
+  .pipe(gulp.dest("dist"));
+}
+
+const html = () => {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("dist"));
+}
+
 // Watcher
 
 const watcher = () => {
@@ -60,6 +99,10 @@ const watcher = () => {
   gulp.watch("source/*.html").on("change", sync.reload);
 }
 
+// Build
+
+gulp.task("build", gulp.series(clean, styles, cssLib, jsLib, webpack, copy, html));
+
 exports.default = gulp.series(
-  styles, cssLib, jsLib, server, watcher
+  "build", server, watcher
 );
