@@ -17,7 +17,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  guthub_token: $GITHUB_TOKEN
-  local_dir: build
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
   on:
     branch: master
