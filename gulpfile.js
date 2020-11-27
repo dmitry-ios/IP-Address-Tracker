@@ -23,6 +23,8 @@ const webpack = () => {
   return run("webpack --mode production").exec().pipe(sync.stream());
 };
 
+exports.webpack = webpack;
+
 // Styles
 
 const styles = () => {
@@ -89,14 +91,18 @@ const copy = () => {
 const html = () => {
   return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist"));
+    .pipe(gulp.dest("dist"))
+    .pipe(sync.stream());
 }
+
+exports.html = html;
 
 // Watcher
 
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
-  gulp.watch("source/*.html").on("change", sync.reload);
+  gulp.watch("source/*.html", gulp.series("html"));
+  gulp.watch("source/js/**/*.js", gulp.series("webpack"));
 }
 
 // Build

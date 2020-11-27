@@ -35,7 +35,6 @@
 .info-list__item {
   position: relative;
 
-  flex-grow: 1;
   margin: 0 32px;
   margin-bottom: 25px;
 
@@ -44,14 +43,18 @@
   }
 
   @media (min-width: $tablet-width) {
+    flex-grow: 1;
+    width: 25%;
+    margin-bottom: 0;
+
     &:not(:last-child)::after {
       content: "";
       position: absolute;
       right: -32px;
-      top: 0;
+      top: 8px;
+      bottom: 8px;
 
       width: 1px;
-      height: 75px;
 
       background-color: $basic-light-grey;
     }

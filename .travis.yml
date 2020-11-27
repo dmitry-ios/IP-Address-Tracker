@@ -5,3 +5,19 @@ node_js:
 
 notifications:
   email: false
+
+cache: npm
+
+install:
+  - npm ci
+
+script:
+  - npm run build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  guthub_token: $GITHUB_TOKEN
+  local_dir: build
+  on:
+    branch: master
