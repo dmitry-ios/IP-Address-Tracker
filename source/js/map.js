@@ -1,7 +1,9 @@
 'use strict';
 
 const leafletMap = window.L.map(`mapid`).setView([51.505, -0.09], 13);
-const markerIcon = window.L.icon({iconUrl: `../img/icon-location.svg`});
+const pathname = window.location.pathname;
+const baseUrl = window.location.origin + (pathname.length > 1 ? pathname : ``);
+const markerIcon = window.L.icon({iconUrl: baseUrl + `/img/icon-location.svg`});
 
 const API_URL = `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZG1pdHJ5YiIsImEiOiJja2hld293cW8wYThxMnNwbDkxdWhwNjZlIn0.EI5vC4TroTo2dOQN-deCQQ`;
 
