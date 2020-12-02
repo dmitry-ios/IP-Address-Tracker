@@ -1,0 +1,35 @@
+.error {
+  z-index: 100;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+
+  display: flex;
+  justify-content: center;
+  min-height: 40px;
+
+  color: $special-dark-red;
+
+  background-color: $special-very-light-pink;
+  border: 1px solid $special-light-pink;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.error__message {
+  flex-grow: 1;
+  margin: 16px 16px 16px 16px;
+}
+
+.error__button {
+  margin: 0 16px;
+
+  color: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}

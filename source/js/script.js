@@ -38,6 +38,7 @@ const setInputInformation = () => {
 
 submitButton.addEventListener(`click`, (evt) => {
   evt.preventDefault();
+  window.render.clearErrorMessage();
   setInputInformation();
 });
 
