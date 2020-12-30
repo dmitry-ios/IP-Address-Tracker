@@ -27,3 +27,4 @@ source/css/*.css
 source/css/*.map
 Thumbs.db
 dist/
+package-lock.json
