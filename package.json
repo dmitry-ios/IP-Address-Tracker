@@ -5,7 +5,9 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "9.8.4",
-    "browser-sync": "^2.26.10",
+    "axios": ">=0.21.1",
+    "browser-sync": "^2.26.14",
+    "deep-extend": ">=0.5.1",
     "del": "^6.0.0",
     "eslint": "7.1.0",
     "eslint-config-htmlacademy": "0.6.0",
@@ -21,13 +23,12 @@
     "gulp-run": "^1.7.1",
     "gulp-sass": "4.1.0",
     "gulp-sourcemaps": "2.6.5",
+    "merge": ">=1.2.1",
     "stylelint": "13.7.2",
     "stylelint-config-htmlacademy": "0.1.4",
     "webpack": "5.1.3",
     "webpack-cli": "4.1.0",
-    "yargs": "^16.1.1",
-    "deep-extend": ">=0.5.1",
-    "merge": ">=1.2.1"
+    "yargs": "^16.1.1"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
